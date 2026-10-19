@@ -139,6 +139,7 @@ function sv(){try{localStorage.setItem(K,JSON.stringify({t:els.map(function(e){r
 function ct(){document.getElementById("ct").textContent=CFG.phone+" · "+CFG.email;document.getElementById("wa").href="https://wa.me/"+CFG.whatsapp}
 function ed(on){document.body.classList.toggle("editing",on);els.forEach(function(e){e.contentEditable=on});["b2","b3","b4"].forEach(function(i){document.getElementById(i).hidden=!on});document.getElementById("b1").textContent=on?"✅ Done":"✏️ Edit page"}
 var on=false;ld();ct();
+if(!/edit/.test(location.search+location.hash))document.getElementById("bar").style.display="none";
 document.getElementById("b1").onclick=function(){on=!on;ed(on)};
 document.getElementById("b2").onclick=sv;
 document.getElementById("b3").onclick=function(){var w=prompt("WhatsApp number (country code, no +):",CFG.whatsapp);if(w)CFG.whatsapp=w.replace(/\D/g,"");var p=prompt("Phone shown in footer:",CFG.phone);if(p)CFG.phone=p;var m=prompt("Email shown in footer:",CFG.email);if(m)CFG.email=m;ct()};
